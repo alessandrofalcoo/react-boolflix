@@ -1,4 +1,7 @@
+import { useMoviesContext } from "../contexts/moviesContext";
+
 export default function Header() {
+    const { fetchData } = useMoviesContext()
     return (
         <>
             <nav
@@ -51,7 +54,7 @@ export default function Header() {
                                 </div>
                             </li>
                         </ul>
-                        <form className="d-flex my-2 my-lg-0">
+                        <form onSubmit={(e) => { e.preventDefault(); fetchData() }} className="d-flex my-2 my-lg-0">
                             <input
                                 className="form-control me-sm-2"
                                 type="text"
