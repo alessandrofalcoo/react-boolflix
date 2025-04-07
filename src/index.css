@@ -24,6 +24,7 @@
     .card {
         position: relative;
         overflow: hidden;
+        border: none;
     }
 
     .card-img-top {
@@ -44,6 +45,7 @@
         align-items: center;
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
+
     }
 
     .card:hover .card-img-top {

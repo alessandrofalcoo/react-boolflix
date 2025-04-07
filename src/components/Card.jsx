@@ -3,7 +3,6 @@ import { useMoviesContext } from "../contexts/moviesContext"
 
 export default function Card() {
     const { movies } = useMoviesContext()
-    console.log(movies);
     return (
         <>
             <div className="main">
