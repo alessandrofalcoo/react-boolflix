@@ -21,28 +21,6 @@
     gap: 2rem;
     justify-content: center;
 
-
-    /*  .card {
-        max-width: 200px;
-        display: flow-root;
-        background-color: black;
-
-        &:hover {
-            img {
-                display: none;
-            }
-
-            .card-body {
-                display: block;
-            }
-        }
-
-        img {
-            width: 198px;
-            height: 297px;
-
-        }
-    } */
     .card {
         position: relative;
         overflow: hidden;
