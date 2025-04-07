@@ -6,9 +6,11 @@ const MoviesContext = createContext()
 function MoviesProvider({ children }) {
     const [movies, setMovies] = useState([])
     const [searchText, setSearchText] = useState('')
+    const [language, setLanguage] = useState('');
     const api_key = import.meta.env.VITE_MOVIE_DB_API_KEY;
 
     const base_movies_api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchText}`;
+    const base_series_api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=${language}&query=${searchText}`;
 
 
     function fetchData() {
@@ -23,9 +25,18 @@ function MoviesProvider({ children }) {
                 }
             })
     }
+    function fetchSeries() {
+        fetch(base_series_api_url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setLanguage(data.results)
+
+            })
+    }
     return (
         <>
-            <MoviesContext.Provider value={{ movies, fetchData, searchText, setSearchText }}>
+            <MoviesContext.Provider value={{ movies, fetchData, searchText, setSearchText, fetchSeries, language, setLanguage }}>
                 {children}
             </MoviesContext.Provider>
         </>

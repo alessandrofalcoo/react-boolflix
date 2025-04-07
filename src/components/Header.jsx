@@ -1,10 +1,11 @@
 import { useMoviesContext } from "../contexts/moviesContext";
 
 export default function Header() {
-    const { fetchData, setSearchText } = useMoviesContext()
+    const { fetchData, setSearchText, fetchSeries, setLanguage } = useMoviesContext()
 
     const handleInputChange = (e) => {
         setSearchText(e.target.value)
+        setLanguage(e.target.value)
     }
     return (
         <>
@@ -25,7 +26,7 @@ export default function Header() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
-                        <form onSubmit={(e) => { e.preventDefault(); fetchData(); }} className="d-flex my-2 my-lg-0">
+                        <form onSubmit={(e) => { e.preventDefault(); fetchData(); fetchSeries() }} className="d-flex my-2 my-lg-0">
                             <input
                                 className="form-control me-sm-2"
                                 type="text"
