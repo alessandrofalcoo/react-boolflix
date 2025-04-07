@@ -11,7 +11,7 @@ export default function Card() {
                     <div className="container my-3">
                         {movies.map(movie => (
                             <div className="card text-white" key={movie.id}>
-                                <img className="card-img-top" src={`http://image.tmdb.org/t/p/w1920/${movie.poster_path}`} alt={movie.title} />
+                                <img className="card-img-top" src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`} alt={movie.title} />
                                 <div className="card-body">
                                     <h4 className="card-title">Movie: {movie.title}</h4>
                                     <p className="card-text">Original title: {movie.original_title}</p>

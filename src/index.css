@@ -11,12 +11,11 @@
 }
 
 .logo {
-    max-width: 50% !important;
+    max-width: 30% !important;
 }
 
 .container {
     background-color: black;
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -29,9 +28,5 @@
         background-color: black;
     }
 
-    img {
-        max-height: 300px;
-        max-width: fit-content;
-    }
 
 }
