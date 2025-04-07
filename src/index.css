@@ -22,15 +22,58 @@
     justify-content: center;
 
 
-    .card {
+    /*  .card {
         max-width: 200px;
         display: flow-root;
         background-color: black;
 
+        &:hover {
+            img {
+                display: none;
+            }
+
+            .card-body {
+                display: block;
+            }
+        }
+
         img {
             width: 198px;
             height: 297px;
+
         }
+    } */
+    .card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .card-body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .card:hover .card-img-top {
+        opacity: 0;
+    }
+
+    .card:hover .card-body {
+        opacity: 1;
     }
 
 
