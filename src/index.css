@@ -1,2 +1,37 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
+
+#root {
+    background-color: black;
+}
+
+.main {
+    background-color: black;
+    height: 100vh;
+}
+
+.logo {
+    max-width: 50% !important;
+}
+
+.container {
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+
+    .card {
+        max-width: 200px;
+        display: flow-root;
+        background-color: black;
+    }
+
+    img {
+        max-height: 300px;
+        max-width: fit-content;
+    }
+
+}
