@@ -1,7 +1,11 @@
 import { useMoviesContext } from "../contexts/moviesContext";
 
 export default function Header() {
-    const { fetchData } = useMoviesContext()
+    const { fetchData, setSearchText } = useMoviesContext()
+
+    const handleInputChange = () => {
+        setSearchText()
+    }
     return (
         <>
             <nav
@@ -31,34 +35,13 @@ export default function Header() {
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Link</a>
                             </li>
-                            <li className="nav-item dropdown">
-                                <a
-                                    className="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="dropdownId"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                >Dropdown</a
-                                >
-                                <div
-                                    className="dropdown-menu"
-                                    aria-labelledby="dropdownId"
-                                >
-                                    <a className="dropdown-item" href="#"
-                                    >Action 1</a
-                                    >
-                                    <a className="dropdown-item" href="#"
-                                    >Action 2</a
-                                    >
-                                </div>
-                            </li>
                         </ul>
-                        <form onSubmit={(e) => { e.preventDefault(); fetchData() }} className="d-flex my-2 my-lg-0">
+                        <form onSubmit={(e) => { e.preventDefault(); fetchData(); }} className="d-flex my-2 my-lg-0">
                             <input
                                 className="form-control me-sm-2"
                                 type="text"
                                 placeholder="Search"
+                                onChange={handleInputChange}
                             />
                             <button
                                 className="btn btn-outline-success my-2 my-sm-0"

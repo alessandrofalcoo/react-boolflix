@@ -15,11 +15,13 @@ function MoviesProvider({ children }) {
         fetch(base_movies_api_url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                setMovies(data)
-                setSearchText(data)
-                console.log(movies);
-
+                if (data.results && data.results.length > 0) {
+                    setMovies(data.results);
+                    console.log('Movies:', data.results);
+                } else {
+                    console.warn('No results found for the given query.');
+                    setMovies([]); // Resetta lo stato se non ci sono risultati
+                }
             })
     }
     return (
