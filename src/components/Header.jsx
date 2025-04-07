@@ -3,8 +3,8 @@ import { useMoviesContext } from "../contexts/moviesContext";
 export default function Header() {
     const { fetchData, setSearchText } = useMoviesContext()
 
-    const handleInputChange = () => {
-        setSearchText()
+    const handleInputChange = (e) => {
+        setSearchText(e.target.value)
     }
     return (
         <>
