@@ -26,7 +26,17 @@
         max-width: 200px;
         display: flow-root;
         background-color: black;
+
+        img {
+            width: 198px;
+            height: 297px;
+        }
     }
 
 
+}
+
+.btn {
+    color: white;
+    border-color: white;
 }
