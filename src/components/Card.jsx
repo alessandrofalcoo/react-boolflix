@@ -12,7 +12,7 @@ export default function Card() {
                             <div className="card text-white" key={movie.id}>
                                 <img className="card-img-top" src={movie.poster_path === null ? '../public/img/Netflix-symbol.png' : `http://image.tmdb.org/t/p/w342/${movie.poster_path}`} alt={movie.title} />
                                 <div className="card-body">
-                                    <h4 className="card-title">Movie: {movie.title}</h4>
+                                    <h4 className="card-title"><strong>Movie:</strong> {movie.title}</h4>
                                     <p className="card-text"><strong>Original title:</strong> {movie.original_title}</p>
                                     <p className="card-language"><strong>Language:</strong> <strong className="text-uppercase">{movie.original_language}</strong></p>
                                     <p className="card-rating"><strong>Rating:</strong> {movie.vote_average}</p>
